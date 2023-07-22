@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="JavaLearn.JavaLearn.main" target="19" />
-      <module name="JavaLearn.JavaLearn.test" target="19" />
+      <module name="JavaLearn.JavaLearn.main~1" target="19" />
+      <module name="JavaLearn.JavaLearn.test~1" target="19" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -14,6 +14,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("org.testng:testng:6.9.10")
     testImplementation("org.seleniumhq.selenium:selenium-java:3.141.59")
+    testImplementation("org.seleniumhq.selenium:selenium-firefox-driver:3.141.59")
 }
 
 tasks.test {
