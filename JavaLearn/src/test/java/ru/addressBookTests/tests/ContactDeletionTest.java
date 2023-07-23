@@ -1,4 +1,4 @@
-package ru.addressBookTests;
+package ru.addressBookTests.tests;
 
 import org.testng.annotations.*;
 import org.openqa.selenium.*;
@@ -9,11 +9,11 @@ public class ContactDeletionTest extends TestBase{
   public void testContactDeletion() throws Exception {
 
 
-    selectContact();
-    deleteContact();
-    Alert alert = wd.switchTo().alert();
+    app.selectContact();
+    app.deleteContact();
+    Alert alert = app.wd.switchTo().alert();
     alert.accept();
-    logout();
+    app.logout();
   }
 
 

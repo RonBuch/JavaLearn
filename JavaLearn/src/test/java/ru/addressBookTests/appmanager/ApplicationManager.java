@@ -1,24 +1,23 @@
-package ru.addressBookTests;
-//Данный класс содержит общие методы для всех тестов
+package ru.addressBookTests.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.internal.MethodGroupsHelper;
+import ru.addressBookTests.model.ContactData;
+import ru.addressBookTests.model.GroupData;
 
 import java.util.concurrent.TimeUnit;
 
-public class TestBase {
+public class ApplicationManager extends GroupHelper {
     public WebDriver wd;
 
-    @BeforeMethod(alwaysRun = true)
-    public void setUp() throws Exception {
-      wd = new ChromeDriver();
-      wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-      login("admin", "secret");
+    public void init() {
+        wd = new ChromeDriver();
+        wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        login("admin", "secret");
     }
 
     public void login(String username, String password) {
@@ -55,9 +54,8 @@ public class TestBase {
       wd.findElement(By.linkText("groups")).click();
     }
 
-    @AfterMethod(alwaysRun = true)
-    public void tearDown() throws Exception {
-      wd.quit();
+    public void stop() {
+        wd.quit();
     }
 
     private boolean isElementPresent(By by) {
